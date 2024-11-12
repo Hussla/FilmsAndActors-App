@@ -1,4 +1,4 @@
-﻿namespace FilmAndActorsClasses
+namespace FilmAndActorsClasses
 {
     using System;
     using System.Collections.Generic;
@@ -9,57 +9,57 @@
     public class Film
     {
         // Private member variables
-        private string _title;
-        private string _genre;
-        private int _releaseYear;
-        private List<int> _ratings;
-        private List<Actor> _actors;
+        private string title;
+        private string genre;
+        private int releaseYear;
+        private List<int> ratings;
+        private List<Actor> actors;
 
         // Constructor
         public Film(string title, string genre, int releaseYear)
         {
-            _title = title;
-            _genre = genre;
-            _releaseYear = releaseYear;
-            _ratings = new List<int>();
-            _actors = new List<Actor>();
+            title = title;
+            genre = genre;
+            releaseYear = releaseYear;
+            ratings = new List<int>();
+            actors = new List<Actor>();
         }
 
         // Public properties for encapsulated access
         public string Title
         {
-            get { return _title; }
-            set { _title = value; }
+            get { return title; }
+            set { title = value; }
         }
 
         public string Genre
         {
-            get { return _genre; }
-            set { _genre = value; }
+            get { return genre; }
+            set { genre = value; }
         }
 
         public int ReleaseYear
         {
-            get { return _releaseYear; }
-            set { _releaseYear = value; }
+            get { return releaseYear; }
+            set { releaseYear = value; }
         }
 
         public List<int> Ratings
         {
-            get { return _ratings; }
+            get { return ratings; }
         }
 
         public List<Actor> Actors
         {
-            get { return _actors; }
+            get { return actors; }
         }
 
         // Method to add an actor to the film
         public void AddActor(Actor actor)
         {
-            if (!_actors.Contains(actor))
+            if (!actors.Contains(actor))
             {
-                _actors.Add(actor);
+                actors.Add(actor);
             }
         }
 
@@ -68,7 +68,7 @@
         {
             if (rating >= 1 && rating <= 5)
             {
-                _ratings.Add(rating);
+                ratings.Add(rating);
             }
             else
             {
@@ -79,11 +79,11 @@
         // Method to calculate and return the average rating
         public double GetAverageRating()
         {
-            if (_ratings.Count == 0)
+            if (ratings.Count == 0)
             {
                 return 0.0; // No ratings available
             }
-            return _ratings.Average();
+            return ratings.Average();
         }
 
         // Method to display detailed information about the film
