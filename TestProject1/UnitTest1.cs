@@ -5,7 +5,6 @@ namespace TestProject1
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]
     // Test Class for Unit Testing
-
     public class FilmAndActorTests
     {
         [Test]
@@ -13,12 +12,11 @@ namespace TestProject1
         {
             // Arrange
             // Create an instance of the Actor class with a given name and age
-
             Actor actor = new Actor("John Doe", 35);
 
             // Act
-            // Retrieve the name of the actor
-            string result = actor.GetName();
+            // Retrieve the name of the actor using the property accessor
+            string result = actor.Name;
 
             // Assert
             // Verify that the retrieved name matches the expected name
@@ -33,8 +31,8 @@ namespace TestProject1
             Actor actor = new Actor("John Doe", 35);
 
             // Act
-            // Retrieve the age of the actor
-            int result = actor.GetAge();
+            // Retrieve the age of the actor using the property accessor
+            int result = actor.Age;
 
             // Assert
             // Verify that the retrieved age matches the expected age
@@ -55,7 +53,7 @@ namespace TestProject1
 
             // Assert
             // Verify that the film was successfully added to the actor's filmography
-            Assert.Contains(film, actor.GetFilms()); // change these to debug.assert
+            Assert.Contains(film, actor.Films);
         }
 
         [Test]
@@ -66,8 +64,8 @@ namespace TestProject1
             Film film = new Film("Inception", "Sci-Fi", 2010);
 
             // Act
-            // Retrieve the title of the film
-            string result = film.GetTitle();
+            // Retrieve the title of the film using the property accessor
+            string result = film.Title;
 
             // Assert
             // Verify that the retrieved title matches the expected title
@@ -88,8 +86,26 @@ namespace TestProject1
 
             // Assert
             // Verify that the actor was successfully added to the film's cast
-            Assert.AreEqual(1, film.GetActors().Count);
-            Assert.AreEqual("Leonardo DiCaprio", film.GetActors()[0].GetName());
+            Assert.AreEqual(1, film.Actors.Count);
+            Assert.AreEqual("Leonardo DiCaprio", film.Actors[0].Name);
+        }
+
+        [Test]
+        public void CalculateAverageRatingForFilm()
+        {
+            // Arrange
+            // Create an instance of the Film class and add some ratings
+            Film film = new Film("Inception", "Sci-Fi", 2010);
+            film.AddRating(4);
+            film.AddRating(5);
+
+            // Act
+            // Calculate the average rating for the film
+            double averageRating = film.GetAverageRating();
+
+            // Assert
+            // Verify that the calculated average rating matches the expected value
+            Assert.AreEqual(4.5, averageRating);
         }
     }
 }
