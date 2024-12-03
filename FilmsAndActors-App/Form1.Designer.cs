@@ -54,6 +54,7 @@
             titleTextBox.TabIndex = 1;
             titleTextBox.Text = "Title";
             titleTextBox.TextAlign = HorizontalAlignment.Center;
+            titleTextBox.TextChanged += titleTextBox_TextChanged;
             // 
             // genreTextBox
             // 
@@ -91,6 +92,7 @@
             displayFilms.TabIndex = 5;
             displayFilms.Text = "Display Films";
             displayFilms.UseVisualStyleBackColor = true;
+            displayFilms.Click += displayFilms_Click;
             // 
             // Form1
             // 

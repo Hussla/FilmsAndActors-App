@@ -83,5 +83,21 @@ namespace FilmsAndActors_App
                 filmsListBox.Items.Add("No films available in the catalogue.");
             }
         }
+
+        private void titleTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void displayFilms_Click(object sender, EventArgs e)
+        {
+            filmsListBox.Items.Clear(); // Clear the list box
+
+            // Iterate over all films in the dictionary and add each one with full details
+            foreach (var film in films.Values)
+            {
+                filmsListBox.Items.Add($"{film.Title} ({film.ReleaseYear}) - {film.Genre}");
+            }
+        }
     }
 }
