@@ -13,7 +13,7 @@
         private List<string> films; // Stores the list of films the actor has appeared in
 
         // Constructor
-        // Initializes a new instance of the Actor class with the specified name and age
+        // Initialises a new instance of the Actor class with the specified name and age
         public Actor(string name, int age)
         {
             this.name = name;

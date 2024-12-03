@@ -808,7 +808,7 @@ Explanation of Topics;
    - Alternatives: A `for` loop could be used instead of `foreach`, but `foreach` is generally more readable for collection iteration.
    - Updates: The loops were updated to include additional menu options, enhancing user experience by supporting new functionalities.
 
-5.Collections and foreach Loop:
+5. Collections and foreach Loop:
    - The program makes use of `Dictionary<string, Film>` and `Dictionary<string, Actor>` to store collections of films and actors, ensuring unique entries for each.
    - The `foreach` loop is used to iterate over these dictionaries when displaying or saving data, enhancing readability and simplicity.
    - An alternative would be using arrays, but dictionaries are more suitable for fast lookups and managing unique keys.
